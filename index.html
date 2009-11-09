@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Color Picker</title>
+    <script src="ColorPicker.dcproj/project/widget.wdgt/Color.js"></script>
+    <style type="text/css">
+    #box {
+      width: 200px;
+      height: 20px;
+      background: -webkit-gradient(linear, left top, right top, color-stop(0.0, hsl(156, 0%, 76%)), color-stop(0.50, hsl(156, 50%, 76%)), color-stop(1.0, hsl(156, 100%, 76%)));
+    }
+    </style>
+    <script>
+      var c1 = Color.instance();
+      c1.set("12, 34, 56", Color.RGB);
+      console.log(c1.rgb());
+      var c2 = new Color();
+      c2.set("98, 76, 54", Color.RGB);
+      console.log(c2.rgb());
+      console.log(c1.rgb());
+    </script>
+  </head>
+  <body>
+    <div id="box"></div>
+  </body>
+</html>

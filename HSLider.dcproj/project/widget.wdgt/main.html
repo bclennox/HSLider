@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleInfoButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleSlider.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="Parts/parts.js" charset="utf-8"></script>
+    <script type="text/javascript" src="localizedStrings.js" charset="utf-8"></script>
+    <script type="text/javascript" src="main.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Color.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Gradient.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Adjustor.js" charset="utf-8"></script>
+    <script type="text/javascript" src="behavior.js" charset="utf-8"></script>
+</head>
+<body onload="load();" apple-part="com.apple.Dashcode.part.StackLayout">
+    <div id="front">
+        <img id="frontImg" src="Parts/Images/front.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.frontimage" apple-style="image-theme: 1; image-shape: 3; image-opacity: 1.00; image-top-color: 1,1,1,1; image-bottom-color: 0.674509823,0.674509823,0.674509823,1; image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.5294,0.5294,0.5294,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 1; shadow-offset: -1.00,-6.00; shadow-color: 0,0,0,0.3333;">
+        <div class="apple-no-children" id="info" apple-part="com.apple.Dashcode.part.infobutton" apple-default-image-visibility="hidden" apple-always-show-guides="true"></div>
+        <div id="sample" apple-part="com.apple.Dashcode.part.roundedbox"></div>
+        <div id="hue-gradient" apple-part="com.apple.Dashcode.part.box"></div>
+        <div id="saturation-gradient" apple-part="com.apple.Dashcode.part.box"></div>
+        <div id="lightness-gradient" apple-part="com.apple.Dashcode.part.box"></div>
+        <input id="hue" title="Hue" apple-part="com.apple.Dashcode.part.slider" type="range" min="0" value="80" max="359" class="hsl-slider">
+        <input id="saturation" title="Saturation" apple-part="com.apple.Dashcode.part.slider" type="range" min="0" value="75" max="100" class="hsl-slider">
+        <input id="lightness" title="Lightness" apple-part="com.apple.Dashcode.part.slider" type="range" min="0" value="73" max="100" class="hsl-slider">
+        <input id="hex" type="text" name="" value="ce8" class="apple-textfield apple-no-children user-input" apple-part="com.apple.Dashcode.part.textfield">
+        <input id="hsl" type="text" name="" value="80, 75, 73" class="apple-textfield apple-no-children user-input" apple-part="com.apple.Dashcode.part.textfield">
+        <input id="rgb" type="text" name="" value="204, 238, 136" class="apple-textfield apple-no-children user-input" apple-part="com.apple.Dashcode.part.textfield">
+        <div id="hex-label" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children label" apple-text-overflow="ellipsis"></div>
+        <div id="hsl-label" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children label" apple-text-overflow="ellipsis"></div>
+        <div id="rgb-label" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children label" apple-text-overflow="ellipsis"></div>
+        <div id="copy-hex" apple-part="com.apple.Dashcode.part.lozengetextbutton" class="apple-no-children copy" apple-style="image-theme: 1; image-shape: 1; image-button-type: 0; image-opacity: 1.00; image-top-color: 1,1,1,1; image-bottom-color: 0.674509823,0.674509823,0.674509823,1; image-radius: 10,10,10,10; image-border: 1; image-border-color: 0.5294,0.5294,0.5294,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 0;"></div>
+        <div id="copy-hsl" apple-part="com.apple.Dashcode.part.lozengetextbutton" class="apple-no-children copy" apple-style="image-theme: 1; image-shape: 1; image-button-type: 0; image-opacity: 1.00; image-top-color: 1,1,1,1; image-bottom-color: 0.674509823,0.674509823,0.674509823,1; image-radius: 10,10,10,10; image-border: 1; image-border-color: 0.5294,0.5294,0.5294,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 0;"></div>
+        <div id="copy-rgb" apple-part="com.apple.Dashcode.part.lozengetextbutton" class="apple-no-children copy" apple-style="image-theme: 1; image-shape: 1; image-button-type: 0; image-opacity: 1.00; image-top-color: 1,1,1,1; image-bottom-color: 0.674509823,0.674509823,0.674509823,1; image-radius: 10,10,10,10; image-border: 1; image-border-color: 0.5294,0.5294,0.5294,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 0;"></div>
+    </div>
+    <div id="back">
+        <img id="backImg" src="Parts/Images/back.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.backimage" apple-style=" image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.1500,0.1500,0.1500; image-border-width: 3; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
+        <div id="hex-prefs-heading" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+        <div id="upcase-hex-values-container" apple-part="com.apple.Dashcode.part.checkboxbutton" apple-group="checkbox">
+            <input type="checkbox" name="" checked="checked" apple-part="com.apple.Dashcode.part.input" id="upcase-hex-values" apple-group="checkbox">
+            <label for="upcase-hex-values" id="upcase-hex-values-label">Use uppercase</label>
+        </div>
+        <div id="compact-hex-values-container" apple-part="com.apple.Dashcode.part.checkboxbutton" apple-group="checkbox">
+            <input type="checkbox" name="" checked="checked" apple-part="com.apple.Dashcode.part.input" id="compact-hex-values" apple-group="checkbox">
+            <label for="compact-hex-values" id="compact-hex-values-label">Shorten when possible</label>
+        </div>
+        <div id="compact-hex-values-help" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+        <div id="done" class="apple-no-children" apple-part="com.apple.Dashcode.part.glassbutton"></div>
+        <div id="branding" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+        <div id="help" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+    </div>
+</body>
+</html>
