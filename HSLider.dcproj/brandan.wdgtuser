@@ -7,7 +7,7 @@
 	<key>CYBreakOnException</key>
 	<false/>
 	<key>CYLastWindowPosition</key>
-	<string>{596, 273}</string>
+	<string>{255, 312}</string>
 	<key>ContentSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -23,7 +23,7 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>0</integer>
+	<integer>5</integer>
 	<key>DeploymentOptions</key>
 	<dict>
 		<key>Destination</key>
@@ -33,7 +33,7 @@
 		<key>Path</key>
 		<string>ColorPicker</string>
 		<key>SavePath</key>
-		<string>/Users/brandan/Desktop</string>
+		<string>/Users/brandan/Sites/widgets/hslider/releases</string>
 		<key>enableSimulation</key>
 		<true/>
 		<key>simulatedHost</key>
@@ -54,7 +54,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>325 59 1089 819 0 0 1440 878 </string>
+	<string>334 59 1089 819 0 0 1440 878 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -86,33 +86,32 @@
 			</array>
 			<array>
 				<integer>0</integer>
-				<integer>1</integer>
-				<integer>4</integer>
-			</array>
-			<array>
-				<integer>0</integer>
-			</array>
-			<array>
-				<integer>0</integer>
-				<integer>0</integer>
-			</array>
-			<array>
-				<integer>0</integer>
-				<integer>1</integer>
 			</array>
 			<array>
 				<integer>0</integer>
 				<integer>1</integer>
 				<integer>2</integer>
 			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+			</array>
 		</array>
 		<key>Objects view last selections</key>
-		<array/>
+		<array>
+			<array>
+				<integer>5</integer>
+			</array>
+		</array>
 		<key>Opened Steps</key>
 		<array/>
 		<key>Visible StackLayout Views</key>
 		<array>
-			<string>back</string>
+			<string>front</string>
 		</array>
 	</dict>
 </dict>

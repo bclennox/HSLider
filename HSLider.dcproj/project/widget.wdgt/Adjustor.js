@@ -61,9 +61,18 @@ Adjustor.nudge = function (input, event, format){
     return parsed;
   }
   
+  /**
+   * Replaces the currently matched substring with another value, based on
+   * the start and length found by parse() (i.e., call that first). Returns
+   * the new string.
+   *
+   * @param string
+   * @return string
+   */
   function replace(value){
     var min = 0, max;
     
+    // determine the maximum value for this...value
     if (format == Color.RGB){
       max = 255;
     } else {
@@ -80,6 +89,13 @@ Adjustor.nudge = function (input, event, format){
     return chunks.join("");
   }
   
+  /**
+   * Provides the offset to add to the current value, based on whether
+   * we're nudging up or down (which arrow key) and big or small (whether
+   * the Option key was being held).
+   *
+   * @return int
+   */
   function adjustment(){
     return (direction == Adjustor.UP ? 1 : -1) * (event.altKey ? 10 : 1);
   }

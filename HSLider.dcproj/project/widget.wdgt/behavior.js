@@ -135,7 +135,7 @@ window.addEventListener("load", function (){
   // do other widget-related stuff
   document.getElementById("help").addEventListener("click", function (){
     if (window.widget){
-      widget.openURL("http://bclennox.com/code/#hslider");
+      widget.openURL("http://bclennox.com/projects/hslider");
     }
   });
 });

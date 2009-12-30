@@ -35,18 +35,40 @@ function Color(){
   /*** Private instance methods ***/
   
   
+  /**
+   * Converts a decimal number to a hex string, but only for values less
+   * than 255 because I'm lazy.
+   *
+   * @param int
+   * @return string
+   */
   function dec2hex(dec){
     dec = Math.min(Math.max(Math.round(dec), 0), 255);
     return "" + chars[Math.floor(dec / 16)] + chars[dec % 16];
   }
   
+  /**
+   * Converts a hex string to a decimal number.
+   *
+   * @param string
+   * @return int
+   */
   function hex2dec(hex){
     return hex.toString().split("").inject(0, function (sum, ch, i){
       return sum + (chars.indexOf(ch) * Math.pow(16, hex.length - i - 1));
     });
   }
   
+  /**
+   * Converts an RGB value (an array of [R, G, B] integers) to HSL (an array
+   * of [H, S, L] integers).
+   *
+   * @param array
+   * @return array
+   */
   function rgb2hsl(rgb){
+    
+    // http://en.wikipedia.org/wiki/HSL_and_HSV#Formal_specifications
     var r = rgb[0] / 255,
         g = rgb[1] / 255,
         b = rgb[2] / 255,
@@ -78,7 +100,16 @@ function Color(){
     return [h, s * 100, l * 100].map(Math.round);
   }
   
+  /**
+   * Converts an HSL value (an array of [H, S, L] integers) to RGB (an array
+   * of [R, G, B] integers).
+   *
+   * @param array
+   * @return array
+   */
   function hsl2rgb(hsl){
+    
+    // http://en.wikipedia.org/wiki/HSL_and_HSV#Formal_specifications
     var h = hsl[0] / 360,
         s = hsl[1] / 100,
         l = hsl[2] / 100,
@@ -103,6 +134,17 @@ function Color(){
     });
   }
   
+  /**
+   * Converts a color value in one of the three recognized formats to
+   * a normalized format and updates the nominal value of this color as
+   * a side effect.
+   *
+   * Returns the new nominal value (a hash with keys "rgb" and "hsl").
+   *
+   * @param string or array
+   * @param class constant
+   * @return hash
+   */
   function normalize(value, format){
     
     var spec;
@@ -121,6 +163,12 @@ function Color(){
     return nominal;
   }
   
+  /**
+   * Parses a hex string and returns the RGB and HSL equivalents as a "nominal" hash.
+   *
+   * @param string
+   * @return hash
+   */
   function parsehex(value){
     if (!value.match(/^#?(?:[0-9A-Fa-f]{3})(?:[0-9A-Fa-f]{3})?$/)){
       throw new TypeError("Invalid hex string: " + value)
@@ -137,6 +185,12 @@ function Color(){
     return { rgb: rgb, hsl: rgb2hsl(rgb) };
   }
   
+  /**
+   * Parses an RGB array and returns the RGB and HSL equivalents as a "nominal" hash.
+   *
+   * @param array
+   * @return hash
+   */
   function parsergb(value){
     var rgb = chunk(value);
     
@@ -153,6 +207,12 @@ function Color(){
     return { rgb: rgb, hsl: rgb2hsl(rgb) };
   }
   
+  /**
+   * Parses an HSL array and returns the RGB and HSL equivalents as a "nominal" hash.
+   *
+   * @param array
+   * @return hash
+   */
   function parsehsl(value){
     var hsl = chunk(value);
     
@@ -175,6 +235,13 @@ function Color(){
     return { rgb: hsl2rgb(hsl), hsl: hsl };
   }
   
+  /**
+   * Attempts to match three integers in a string and returns them in
+   * an array. Separators are unimportant.
+   *
+   * @param string
+   * @return array
+   */
   function chunk(rgb_or_hsl_string){
     return rgb_or_hsl_string.match(/(\d+)/g).slice(0, 3);
   }
@@ -183,6 +250,14 @@ function Color(){
   /*** Public instance methods ***/
   
   
+  /**
+   * Retrieves a preference value. If a key and value are passed as arguments,
+   * sets the preference first, and then returns it.
+   *
+   * @param string
+   * @param anything
+   * @return anything
+   */
   this.preference = function (key, value){
     if (typeof prefs[key] != "undefined" && typeof value != "undefined"){
       prefs[key] = value;
@@ -191,21 +266,49 @@ function Color(){
     return prefs[key];
   };
   
+  /**
+   * Sets the nominal value of this color in a given format. Returns the
+   * instance so you can chain another method call if you like (even though
+   * that method probably can't chain).
+   *
+   * @param string
+   * @param class constant
+   * @return this
+   */
   this.set = function (value, format){
     normalize(value, format);
     return this;
   };
   
+  /**
+   * Returns the nominal value of this color as a hash with keys "rgb" and "hsl".
+   *
+   * @return hash
+   */
   this.nominal = function (){
     return nominal;
   }
   
+  /**
+   * Proxy to hex(), rgb(), and hsl() methods. Pass the name of the method
+   * as a string. This just seems safer than Color[method_name]().
+   *
+   * @param string
+   * @return string
+   */
   this.fetch = function (format){
     if (typeof this[format] == "function"){
       return this[format].apply(this, Array.prototype.slice.call(arguments).slice(1));
     }
   };
   
+  /**
+   * Returns the hex value of this color as a string. Pass a boolean indicating
+   * whether to format the return value as valid CSS.
+   *
+   * @param boolean
+   * @return string
+   */
   this.hex = function (css){
     var hex = nominal.rgb.map(dec2hex).join("");
     
@@ -218,10 +321,24 @@ function Color(){
     return (css ? "#" : "") + hex;
   };
   
+  /**
+   * Returns the RGB value of this color as a string. Pass a boolean indicating
+   * whether to format the return value as valid CSS.
+   *
+   * @param boolean
+   * @return string
+   */
   this.rgb = function (css){
     return (css ? "rgb(" : "") + nominal.rgb.join(", ") + (css ? ")" : "");
   };
   
+  /**
+   * Returns the HSL value of this color as a string. Pass a boolean indicating
+   * whether to format the return value as valid CSS.
+   *
+   * @param boolean
+   * @return string
+   */
   this.hsl = function (css){
     var hsl = nominal.hsl;
     
@@ -233,6 +350,11 @@ function Color(){
     return (css ? "hsl(" : "") + hsl.join(", ") + (css ? ")" : "");
   };
   
+  /**
+   * Same as this.hex(true).
+   *
+   * @return string
+   */
   this.toString = function (){
     return this.hex(true);
   };
@@ -242,10 +364,17 @@ function Color(){
 /*** Class constants and methods ***/
 
 
+// use these to indicate the format of the value passed to set() and stuff
 Color.HEX = "hex";
 Color.RGB = "rgb";
 Color.HSL = "hsl";
 
+/**
+ * Returns the singleton instance of the Color class. But it's not really
+ * a Singleton.
+ *
+ * @return Color
+ */
 Color.instance = function (){
   if (Color._instance == undefined){
     Color._instance = new Color();

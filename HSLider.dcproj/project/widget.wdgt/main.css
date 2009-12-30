@@ -37,9 +37,9 @@ body {
     display: block;
     top: 0px;
     left: 0px;
-    bottom: 0px;
     right: 0px;
     width: auto;
+    bottom: 0px;
     height: auto;
 }
 
@@ -74,7 +74,7 @@ body {
     left: 25px;
     width: 198px;
     top: 23px;
-    background-color: rgb(204, 238, 136);
+    background-color: rgb(214, 0, 139);
 }
 
 #hex {
@@ -282,8 +282,8 @@ body {
     color: rgb(255, 255, 255);
     font-family: 'Lucida Grande';
     font-size: 11px;
-    left: 35px;
-    top: 71px;
+    left: 34px;
+    top: 109px;
 }
 
 #upcase-hex-values-label {
@@ -311,8 +311,8 @@ body {
     font-size: 11px;
     text-shadow: none;
     color: rgb(255, 255, 255);
-    left: 35px;
-    top: 91px;
+    left: 34px;
+    top: 129px;
 }
 
 #compact-hex-values-label {
@@ -353,11 +353,11 @@ body {
     -webkit-border-top-right-radius: 0px 0px;
     -webkit-border-bottom-left-radius: 0px 0px;
     -webkit-border-bottom-right-radius: 0px 0px;
+    top: 91px;
     left: 25px;
-    top: 53px;
     right: 87px;
     width: auto;
-    bottom: 229px;
+    bottom: 191px;
     height: auto;
 }
 
@@ -370,11 +370,11 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     font-size: 10px;
-    left: 53px;
-    top: 109px;
-    right: 77px;
+    left: 52px;
+    top: 147px;
+    right: 78px;
     width: auto;
-    bottom: 157px;
+    bottom: 135px;
     height: auto;
 }
 
@@ -392,7 +392,12 @@ body {
     width: 93px;
     height: 13px;
     top: 127px;
-    background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(186, 186, 186)), color-stop(0.2, rgb(191, 200, 173)), color-stop(0.4, rgb(196, 214, 159)), color-stop(0.6, rgb(200, 228, 145)), to(rgb(209, 255, 117)));
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, hsl(321, 0%, 42%)), color-stop(0.2, hsl(321, 20%, 42%)), color-stop(0.4, hsl(321, 40%, 42%)), color-stop(0.6, hsl(321, 60%, 42%)), color-stop(1, hsl(321, 100%, 42%)));
+    background-repeat: initial;
+    background-attachment: initial;
+    -khtml-background-clip: initial;
+    -khtml-background-origin: initial;
+    background-color: initial;
 }
 
 #lightness-gradient {
@@ -404,7 +409,12 @@ body {
     width: 93px;
     height: 13px;
     left: 130px;
-    background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(0, 0, 0)), color-stop(0.2, rgb(68, 102, 0)), color-stop(0.4, rgb(136, 204, 0)), color-stop(0.6, rgb(187, 255, 51)), to(rgb(255, 255, 255)));
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, hsl(321, 100%, 0%)), color-stop(0.2, hsl(321, 100%, 20%)), color-stop(0.4, hsl(321, 100%, 40%)), color-stop(0.6, hsl(321, 100%, 60%)), color-stop(1, hsl(321, 100%, 100%)));
+    background-repeat: initial;
+    background-attachment: initial;
+    -khtml-background-clip: initial;
+    -khtml-background-origin: initial;
+    background-color: initial;
     top: 127px;
 }
 
@@ -428,28 +438,31 @@ body {
     color: white;
 }
 
-#help {
-    text-overflow: ellipsis;
-    overflow: hidden;
+#help a {
     font-size: 13px;
-    text-decoration: underline;
-    cursor: pointer;
+    cursor: pointer !important;
     color: rgb(172, 172, 172);
     font-family: 'Lucida Grande';
     position: absolute;
     left: 25px;
     top: 259px;
-    margin-top: 0px;
-    right: 193px;
-    width: auto;
-    bottom: 25px;
-    height: auto;
 }
 
-#help:hover {
+#help a:hover {
     color: white;
 }
 
 .selected #help {
     color: white;
+}
+
+#prefs-recess {
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    width: 210px;
+    height: 81px;
+    top: 85px;
+    left: 20px;
 }

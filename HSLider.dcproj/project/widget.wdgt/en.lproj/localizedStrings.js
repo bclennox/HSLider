@@ -5,7 +5,7 @@
  code generator otherwise the changes will be lost.
  */
 var localizedStrings = {
-    "Branding Link": "http://bclennox.com/hslider",
+    "Branding Link": "http://bclennox.com/projects/hslider",
     "Compact Hex Values Help": "e.g., \"#aabbcc\" → \"#abc\"",
     "CopyHex": "copy",
     "CopyHSL": "copy",
@@ -15,10 +15,12 @@ var localizedStrings = {
     "Hex": "Hex",
     "Hex Prefs Heading": "Hex values:",
     "HSL": "HSL",
-    "HSLider": "HSLider v0.3b",
-    "Link": "http://bclennox.com/hslider",
+    "HSLider": "HSLider",
+    "Link": "http://bclennox.com/projects/hslider",
     "RGB": "RGB"
 };
+
+
 
 
 

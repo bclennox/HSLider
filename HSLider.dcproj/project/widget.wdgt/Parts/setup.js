@@ -10,15 +10,17 @@ var dashcodePartSpecs = {
     "copy-hex": { "creationFunction": "CreateButton", "leftImageWidth": 10, "rightImageWidth": 10, "text": "CopyHex" },
     "copy-hsl": { "creationFunction": "CreateButton", "leftImageWidth": 10, "rightImageWidth": 10, "text": "CopyHSL" },
     "copy-rgb": { "creationFunction": "CreateButton", "leftImageWidth": 10, "rightImageWidth": 10, "text": "CopyRGB" },
+    "div": { "noBackground": true, "text": "Button" },
     "done": { "creationFunction": "CreateGlassButton", "onclick": "showFront", "text": "Done" },
-    "help": { "text": "Help link", "view": "DC.Text" },
     "hex-label": { "text": "Hex", "view": "DC.Text" },
     "hex-prefs-heading": { "text": "Hex Prefs Heading", "view": "DC.Text" },
     "hsl-label": { "text": "HSL", "view": "DC.Text" },
     "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "showBack" },
     "popup": { "creationFunction": "CreatePopupButton", "leftImageWidth": 10, "options": ["Item 1", "Item 2", "Item 3"], "rightImageWidth": 16 },
+    "prefs-recess": { "creationFunction": "CreateShape", "leftImageWidth": 5, "rightImageWidth": 5 },
     "rgb-label": { "text": "RGB", "view": "DC.Text" }
 };
+
 
 
 

@@ -23,12 +23,12 @@
         <div id="hue-gradient" apple-part="com.apple.Dashcode.part.box"></div>
         <div id="saturation-gradient" apple-part="com.apple.Dashcode.part.box"></div>
         <div id="lightness-gradient" apple-part="com.apple.Dashcode.part.box"></div>
-        <input id="hue" title="Hue" apple-part="com.apple.Dashcode.part.slider" type="range" min="0" value="80" max="359" class="hsl-slider">
-        <input id="saturation" title="Saturation" apple-part="com.apple.Dashcode.part.slider" type="range" min="0" value="75" max="100" class="hsl-slider">
-        <input id="lightness" title="Lightness" apple-part="com.apple.Dashcode.part.slider" type="range" min="0" value="73" max="100" class="hsl-slider">
-        <input id="hex" type="text" name="" value="ce8" class="apple-textfield apple-no-children user-input" apple-part="com.apple.Dashcode.part.textfield">
-        <input id="hsl" type="text" name="" value="80, 75, 73" class="apple-textfield apple-no-children user-input" apple-part="com.apple.Dashcode.part.textfield">
-        <input id="rgb" type="text" name="" value="204, 238, 136" class="apple-textfield apple-no-children user-input" apple-part="com.apple.Dashcode.part.textfield">
+        <input id="hue" title="Hue" apple-part="com.apple.Dashcode.part.slider" type="range" min="0" value="321" max="359" class="hsl-slider">
+        <input id="saturation" title="Saturation" apple-part="com.apple.Dashcode.part.slider" type="range" min="0" value="100" max="100" class="hsl-slider">
+        <input id="lightness" title="Lightness" apple-part="com.apple.Dashcode.part.slider" type="range" min="0" value="42" max="100" class="hsl-slider">
+        <input id="hex" type="text" name="" value="d6008b" class="apple-textfield apple-no-children user-input" apple-part="com.apple.Dashcode.part.textfield">
+        <input id="hsl" type="text" name="" value="321, 100, 42" class="apple-textfield apple-no-children user-input" apple-part="com.apple.Dashcode.part.textfield">
+        <input id="rgb" type="text" name="" value="214, 0, 139" class="apple-textfield apple-no-children user-input" apple-part="com.apple.Dashcode.part.textfield">
         <div id="hex-label" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children label" apple-text-overflow="ellipsis"></div>
         <div id="hsl-label" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children label" apple-text-overflow="ellipsis"></div>
         <div id="rgb-label" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children label" apple-text-overflow="ellipsis"></div>
@@ -38,6 +38,7 @@
     </div>
     <div id="back">
         <img id="backImg" src="Parts/Images/back.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.backimage" apple-style=" image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.1500,0.1500,0.1500; image-border-width: 3; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
+        <div id="prefs-recess" apple-part="com.apple.Dashcode.part.roundedrectangleshape" class="apple-no-children" apple-style="image-theme: 0; image-shape: 3; image-button-type: 3; image-opacity: 1.00; image-top-color: 0.674509823,0.674509823,0.674509823,0.1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0.5294,0.5294,0.5294,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; embossed-on: 1; embossed-depth: 1.6; embossed-shadow: 0.66; embossed-highlight: 0; shadow-include-shadow: 0;"></div>
         <div id="hex-prefs-heading" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
         <div id="upcase-hex-values-container" apple-part="com.apple.Dashcode.part.checkboxbutton" apple-group="checkbox">
             <input type="checkbox" name="" checked="checked" apple-part="com.apple.Dashcode.part.input" id="upcase-hex-values" apple-group="checkbox">
@@ -50,7 +51,7 @@
         <div id="compact-hex-values-help" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
         <div id="done" class="apple-no-children" apple-part="com.apple.Dashcode.part.glassbutton"></div>
         <div id="branding" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
-        <div id="help" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+        <div id="help"><a href="http://bclennox.com/projects/hslider">Help</a></div>
     </div>
 </body>
 </html>
